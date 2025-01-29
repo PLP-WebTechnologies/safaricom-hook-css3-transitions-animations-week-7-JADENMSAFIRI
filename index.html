@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS3 Transitions and Animations with JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eee;
+    }
+
+    /* CSS3 Transitions */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .button:hover,
+    .button:focus {
+      background-color: #f0f0f0;
+    }
+
+    /* CSS3 Animations */
+    .banner {
+      width: 100%;
+      height: 200px;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      line-height: 200px;
+      font-size: 24px;
+    }
+
+    .banner.animate {
+      animation: slideIn 1s forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    /* JavaScript Interactions */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 300px;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .modal.open {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS3 Transitions and Animations with JavaScript</h1>
+
+  <h2>CSS3 Transitions</h2>
+
+  <p>
+    Hover over or focus on the button below to see a smooth transition effect using CSS3 transitions:
+  </p>
+
+  <button class="button">Button with Transition</button>
+
+  <h2>CSS3 Animations</h2>
+
+  <p>
+    The banner below uses CSS3 animations to slide in from the left when the page loads:
+  </p>
+
+  <div class="banner animate">Animated Banner</div>
+
+  <h2>JavaScript Functions</h2>
+
+  <p>
+    Click the button below to open a modal window using a JavaScript function:
+  </p>
+
+  <button class="button" onclick="openmodal()">Open Modal</button>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h1>Modal Title</h1>
+      <p>This is a modal window. Click anywhere to close.</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript Function with Parameters and Return Values
+    function calculateArea(width, height) {
+      return width * height;
+    }
+
+    // JavaScript Function to Demonstrate Scope
+    var globalVariable = "Global";
+
+    function checkScope() {
+      var localVariable = "Local";
+
+      console.log("Inside function:", localVariable);
+      console.log("Inside function:", globalVariable);
+    }
+
+    checkScope();
+
+    console.log("Outside function:", localVariable);
+    console.log("Outside function:", globalVariable);
+
+    // JavaScript Function to Toggle CSS Class and Trigger Animation
+    function toggleModal() {
+      var modal = document.getElementById("modal");
+
+      if (modal.classList.contains("open")) {
+        modal.classList.remove("open");
+      } else {
+        modal.classList.add("open");
+      }
+    }
+  </script>
+</body>
+</html>
